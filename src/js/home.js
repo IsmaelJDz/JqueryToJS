@@ -31,3 +31,23 @@ Promise.all([
   .catch(function() {
     console.log('promise all fail');
   })
+
+//jquery
+  // $.ajax('https://randomuser.me/api/', {
+  //   method: 'GET',
+  //   success: function (data) {
+  //     console.log(data);
+  //   }
+  // })
+
+//vanilla JS
+fetch('https://randomuser.me/api/')
+  .then(function(response){
+    return response.json()
+  })
+  .then(function(data) {
+    console.log('user', data.results[0].gender);
+  })
+  .catch(function(response){
+    console.log(response);
+  })
