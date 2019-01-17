@@ -60,22 +60,35 @@ fetch('https://randomuser.me/api/')
       return data;
     }
 
-    const $actionContainer = document.querySelector('#action');
     const actionList = await getData('https://yts.am/api/v2/list_movies.json?genre=action')
-    actionList.data.movies.forEach((movie) =>{
-      const HTMLString = videoItemTemplate(movie);
+    const dramaList = await getData('https://yts.am/api/v2/list_movies.json?genre=drama')
+    const animationList = await getData('https://yts.am/api/v2/list_movies.json?genre=animation')
+
+    function createTemplate(HTMLString){
       const $html = document.implementation.createHTMLDocument();
       $html.body.innerHTML = HTMLString;
-      $actionContainer.append($html.body.children[0]);
+      return $html.body.children[0];
+    }
 
-    })
+    function renderMovieList(list, $container) {
+      $container.children[0].remove();
+      list.forEach((movie) =>{
+      const HTMLString = videoItemTemplate(movie);
+      const movieElement = createTemplate(HTMLString)
+      $container.append(movieElement);
 
-    const $dramaContainer = document.getElementById('#drama');
-    const $animationContainer = document.getElementById('#animation');
+      })
+    }
+    const $actionContainer = document.querySelector('#action');
+    renderMovieList(actionList.data.movies, $actionContainer);
+    const $dramaContainer = document.getElementById('drama');
+    renderMovieList(dramaList.data.movies, $dramaContainer);
+    const $animationContainer = document.getElementById('animation');
+    renderMovieList(animationList.data.movies, $animationContainer);
 
-    const $featuringContainer = document.getElementById('#featuring');
-    const $form = document.getElementById('#form');
-    const $home = document.getElementById('#home');
+    const $featuringContainer = document.getElementById('featuring');
+    const $form = document.getElementById('form');
+    const $home = document.getElementById('home');
 
     const $modal = document.getElementById('modal');
     const $overlay = document.getElementById('overlay');
