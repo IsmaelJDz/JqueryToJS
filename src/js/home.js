@@ -59,14 +59,17 @@ fetch('https://randomuser.me/api/')
       const data = await response.json()
       return data;
     }
+
+    const $actionContainer = document.querySelector('#action');
     const actionList = await getData('https://yts.am/api/v2/list_movies.json?genre=action')
     actionList.data.movies.forEach((movie) =>{
       const HTMLString = videoItemTemplate(movie);
-      const HTMLRender = document.getElementById('drama');
-      HTMLRender.innerHTML = HTMLString;
+      const $html = document.implementation.createHTMLDocument();
+      $html.body.innerHTML = HTMLString;
+      $actionContainer.append($html.body.children[0]);
+
     })
 
-    const $actionContainer = document.querySelector('#action');
     const $dramaContainer = document.getElementById('#drama');
     const $animationContainer = document.getElementById('#animation');
 
