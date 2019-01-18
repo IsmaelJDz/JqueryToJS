@@ -97,6 +97,7 @@ fetch('https://randomuser.me/api/')
     const $modalTitle = $modal.querySelector('h1');
     const $modalImage = $modal.querySelector('img');
     const $modalDescription = $modal.querySelector('p');
+    var prueba;
 
     function videoItemTemplate(movie){
       return (
