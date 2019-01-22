@@ -56,21 +56,16 @@ fetch('https://randomuser.me/api/')
     //await
     async function getData (url){
       const response = await fetch(url)
-        .then(function(e){
-          const data = response.json()
-          return data;
-        })
-        .catch(function(e){
-          if (e) {
-            console.log(e)
-            return false;
-          }
-        })
+      const data = response.json()
+      return data;
+
     }
 
     const $form = document.getElementById('form');
+    const $home = document.getElementById('home');
     $form.addEventListener('submit', (event) => {
       event.preventDefault();
+      $home.classList.add('search-active')
     })
 
     //const actionList = await getData('https://yts.am/api/v2/list_movies.json?genre=action')
@@ -86,12 +81,13 @@ fetch('https://randomuser.me/api/')
       return $html.body.children[0];
     }
 
-    function eventoClick(){
-      console.log('hola');
+    function showModal(){
+      $overlay.classList.add('active');
+      $modal.style.animation = 'modalIn .8s forwards';
     }
 
     function addEventClick($element){
-      $element.addEventListener('click', eventoClick)
+      $element.addEventListener('click', showModal)
     }
 
     function renderMovieList(list, $container) {
@@ -112,11 +108,14 @@ fetch('https://randomuser.me/api/')
 
     const $featuringContainer = document.getElementById('featuring');
 
-    const $home = document.getElementById('home');
-
     const $modal = document.getElementById('modal');
     const $overlay = document.getElementById('overlay');
     const $hideModal = document.getElementById('hide-modal');
+
+    $hideModal.addEventListener('click', ()=>{
+      $overlay.classList.remove('active');
+      $modal.style.animation = 'modalOut .8s forwards';
+    })
 
     const $modalTitle = $modal.querySelector('h1');
     const $modalImage = $modal.querySelector('img');
