@@ -65,9 +65,12 @@ fetch('https://randomuser.me/api/')
       event.preventDefault();
     })
 
-    const actionList = await getData('https://yts.am/api/v2/list_movies.json?genre=action')
-    const dramaList = await getData('https://yts.am/api/v2/list_movies.json?genre=drama')
-    const animationList = await getData('https://yts.am/api/v2/list_movies.json?genre=terror')
+    //const actionList = await getData('https://yts.am/api/v2/list_movies.json?genre=action')
+    const actionList = await getData('./src/js/api/action.json')
+    const dramaList = await getData('./src/js/api/drama.json')
+    //const dramaList = await getData('https://yts.am/api/v2/list_movies.json?genre=drama')
+    //const animationList = await getData('https://yts.am/api/v2/list_movies.json?genre=anime')
+    const animationList = await getData('./src/js/api/terror.json')
 
     function createTemplate(HTMLString){
       const $html = document.implementation.createHTMLDocument();
