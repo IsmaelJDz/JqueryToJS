@@ -62,7 +62,7 @@ fetch('https://randomuser.me/api/')
 
     const actionList = await getData('https://yts.am/api/v2/list_movies.json?genre=action')
     const dramaList = await getData('https://yts.am/api/v2/list_movies.json?genre=drama')
-    const animationList = await getData('https://yts.am/api/v2/list_movies.json?genre=animation')
+    const animationList = await getData('https://yts.am/api/v2/list_movies.json?genre=terror')
 
     function createTemplate(HTMLString){
       const $html = document.implementation.createHTMLDocument();
