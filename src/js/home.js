@@ -56,8 +56,16 @@ fetch('https://randomuser.me/api/')
     //await
     async function getData (url){
       const response = await fetch(url)
-      const data = await response.json()
-      return data;
+        .then(function(e){
+          const data = response.json()
+          return data;
+        })
+        .catch(function(e){
+          if (e) {
+            console.log(e)
+            return false;
+          }
+        })
     }
 
     const actionList = await getData('https://yts.am/api/v2/list_movies.json?genre=action')
