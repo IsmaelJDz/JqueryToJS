@@ -104,8 +104,15 @@ fetch('https://randomuser.me/api/')
       $featuringContainer.append($loader);
 
       const data = new FormData($form);
-      const peli = await getData(`${BASE_API_EXTERNA}list_movies.json?limit=1&query_term=${data.get('name')}`)
-      const HTMLMovie = featuringTemplate(peli.data.movies[0]);
+      /*Desesctructuracion de objetos entramos al objeto movies de data y solo asignamos
+        su valor desestructurado a la funcion featuringTemplate en la poscision 0
+      */
+      const {
+        data: {
+          movies: pelis
+        }
+      } = await getData(`${BASE_API_EXTERNA}list_movies.json?limit=1&query_term=${data.get('name')}`)
+      const HTMLMovie = featuringTemplate(pelis[0]);
       $featuringContainer.innerHTML = HTMLMovie;
     })
 
