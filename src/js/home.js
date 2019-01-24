@@ -129,30 +129,32 @@ fetch('https://randomuser.me/api/')
       return $html.body.children[0];
     }
 
-    function showModal(){
+    function showModal($element){
       $overlay.classList.add('active');
       $modal.style.animation = 'modalIn .8s forwards';
+      const id = $element.dataset.id;
+      const category = $element.dataset.category;
     }
 
     function addEventClick($element){
       $element.addEventListener('click', showModal)
     }
 
-    function renderMovieList(list, $container) {
+    function renderMovieList(list, $container, category) {
       $container.children[0].remove();
       list.forEach((movie) =>{
-        const HTMLString = videoItemTemplate(movie);
+        const HTMLString = videoItemTemplate(movie, category);
         const movieElement = createTemplate(HTMLString)
         $container.append(movieElement);
         addEventClick(movieElement);
       })
     }
     const $actionContainer = document.querySelector('#action');
-    renderMovieList(actionList.data.movies, $actionContainer);
+    renderMovieList(actionList.data.movies, $actionContainer, 'action');
     const $dramaContainer = document.getElementById('drama');
-    renderMovieList(dramaList.data.movies, $dramaContainer);
+    renderMovieList(dramaList.data.movies, $dramaContainer, 'drama');
     const $animationContainer = document.getElementById('animation');
-    renderMovieList(animationList.data.movies, $animationContainer);
+    renderMovieList(animationList.data.movies, $animationContainer, 'animation');
 
     const $modal = document.getElementById('modal');
     const $overlay = document.getElementById('overlay');
@@ -168,9 +170,9 @@ fetch('https://randomuser.me/api/')
     const $modalDescription = $modal.querySelector('p');
     var prueba;
 
-    function videoItemTemplate(movie){
+    function videoItemTemplate(movie, category){
       return (
-        `<div class="primaryPlaylistItem">
+        `<div class="primaryPlaylistItem" data-id="${movie.id}" data-category="${category}">
           <div class="primaryPlaylistItem-image">
             <img src="${movie.medium_cover_image}">
           </div>
