@@ -117,11 +117,11 @@ fetch('https://randomuser.me/api/')
     })
 
     //const actionList = await getData('https://yts.am/api/v2/list_movies.json?genre=action')
-    const actionList = await getData(`${BASE_API_INTERNA}action.json`)
-    const dramaList = await getData('./src/js/api/drama.json')
+    const { data: { movies: actionList} } = await getData(`${BASE_API_INTERNA}action.json`)
+    const { data: { movies: dramaList} } = await getData('./src/js/api/drama.json')
     //const dramaList = await getData('https://yts.am/api/v2/list_movies.json?genre=drama')
     //const animationList = await getData('https://yts.am/api/v2/list_movies.json?genre=anime')
-    const animationList = await getData('./src/js/api/terror.json')
+    const { data: { movies: animationList} } = await getData('./src/js/api/terror.json')
 
     function createTemplate(HTMLString){
       const $html = document.implementation.createHTMLDocument();
@@ -129,15 +129,48 @@ fetch('https://randomuser.me/api/')
       return $html.body.children[0];
     }
 
+    const $modal = document.getElementById('modal');
+    const $overlay = document.getElementById('overlay');
+    const $hideModal = document.getElementById('hide-modal');
+
+    const $modalTitle = $modal.querySelector('h1');
+    const $modalImage = $modal.querySelector('img');
+    const $modalDescription = $modal.querySelector('p');
+
+    function findById(dataFilter, id) {
+      return dataFilter.find(movie => movie.id === parseInt(id, 10));
+    }
+
+    function findMovie(id,category){
+      switch (category) {
+          case 'action' : {
+            return findById(actionList, id);
+          }
+          case 'drama' : {
+            return findById(dramaList, id);
+          }
+          default: {
+            return findById(animationList, id);
+          }
+      }
+    }
+
     function showModal($element){
       $overlay.classList.add('active');
       $modal.style.animation = 'modalIn .8s forwards';
       const id = $element.dataset.id;
       const category = $element.dataset.category;
+      const data = findMovie(id, category)
+
+      $modalTitle.textContent = data.title;
+      $modalImage.setAttribute('src', data.medium_cover_image);
+      $modalDescription.textContent = data.description_full
     }
 
     function addEventClick($element){
-      $element.addEventListener('click', showModal)
+      $element.addEventListener('click', function(){
+        showModal($element)
+      })
     }
 
     function renderMovieList(list, $container, category) {
@@ -150,24 +183,18 @@ fetch('https://randomuser.me/api/')
       })
     }
     const $actionContainer = document.querySelector('#action');
-    renderMovieList(actionList.data.movies, $actionContainer, 'action');
+    renderMovieList(actionList, $actionContainer, 'action');
     const $dramaContainer = document.getElementById('drama');
-    renderMovieList(dramaList.data.movies, $dramaContainer, 'drama');
+    renderMovieList(dramaList, $dramaContainer, 'drama');
     const $animationContainer = document.getElementById('animation');
-    renderMovieList(animationList.data.movies, $animationContainer, 'animation');
+    renderMovieList(animationList, $animationContainer, 'animation');
 
-    const $modal = document.getElementById('modal');
-    const $overlay = document.getElementById('overlay');
-    const $hideModal = document.getElementById('hide-modal');
 
     $hideModal.addEventListener('click', ()=>{
       $overlay.classList.remove('active');
       $modal.style.animation = 'modalOut .8s forwards';
     })
 
-    const $modalTitle = $modal.querySelector('h1');
-    const $modalImage = $modal.querySelector('img');
-    const $modalDescription = $modal.querySelector('p');
     var prueba;
 
     function videoItemTemplate(movie, category){
