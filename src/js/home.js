@@ -193,6 +193,7 @@ fetch('https://randomuser.me/api/')
 
     //const actionList = await getData('https://yts.am/api/v2/list_movies.json?genre=action')
     const { data: { movies: actionList} } = await getData(`${BASE_API_INTERNA}action.json`)
+    window.localStorage.setItem('actionList', JSON.stringify(actionList));
     //const dramaList = await getData('https://yts.am/api/v2/list_movies.json?genre=drama')
     //const animationList = await getData('https://yts.am/api/v2/list_movies.json?genre=anime')
 
@@ -200,10 +201,12 @@ fetch('https://randomuser.me/api/')
     renderMovieList(actionList, $actionContainer, 'action');
 
     const { data: { movies: dramaList} } = await getData('./src/js/api/drama.json')
+    window.localStorage.setItem('dramaList', JSON.stringify(dramaList));
     const $dramaContainer = document.getElementById('drama');
     renderMovieList(dramaList, $dramaContainer, 'drama');
 
     const { data: { movies: animationList} } = await getData('./src/js/api/terror.json')
+    window.localStorage.setItem('animationList', JSON.stringify(animationList));
     const $animationContainer = document.getElementById('animation');
     renderMovieList(animationList, $animationContainer, 'animation');
 
