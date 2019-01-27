@@ -1,0 +1,25 @@
+c57eacc Si la data existe que se guarde en LocalStorage y si no, que la cargue nuevamente
+2141fce Uso de localStorage para guardara la data en el objeto Window
+37c386f Manejo de Errores con Try Catch
+f28fbb7 Merge remote-tracking branch 'origin/prubaGit' into pruebaGitLocal
+b230c4b creamos un archivo en la rama pruebaGit
+1660341 Encontrando elementos en la lista y agregando el contenido al Modal
+c648c32 Uso de dataSET
+9ec111a Desestruccturacion de objetos
+1a0563c Agregando accion al formulario y el buscador de peliculas
+c12d9eb Creacion de elementos y asignacion de atributos
+4b71478 Manipular clases y css con JS
+b4961c3 Merge branch 'master' of git/ismaelJdz for devBranch
+159b0fe Se descargaron los formatos por genero de la API debido a un error al hacer la request
+e8b85fd Enlazando eventos al DOM
+aebbd07 error en fetch por falla de API
+8672d3d Cambiando los generos de la peliculas
+eea2795 agregando variable
+529092b Cargando las imagenes de API con VanillaJs
+5d67f01 Agregando el TemplateJs en VanillaJs
+0c3f133 Agregando plantilla con VanillaJs
+ab25d91 Selectores en Js
+3ea687d funciones async
+c8a2c6f Ajax con jquery y vanillaJs
+ee183a5 Promise Example
+590c3da Archivos base

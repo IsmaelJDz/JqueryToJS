@@ -1,0 +1,151 @@
+commit c57eacc888ff7818bd058fce3da957b8183cf513
+Author: IsmaelJdz7 <ismaelbr87@gmail.com>
+Date:   Sun Jan 27 01:29:38 2019 -0600
+
+    Si la data existe que se guarde en LocalStorage y si no, que la cargue nuevamente
+
+commit 2141fcedae9fb6f3196bb6711627507a8273e425
+Author: IsmaelJdz7 <ismaelbr87@gmail.com>
+Date:   Sun Jan 27 00:59:43 2019 -0600
+
+    Uso de localStorage para guardara la data en el objeto Window
+
+commit 37c386f6ca22d011fd706e5b37a6ff28360f8393
+Author: IsmaelJdz7 <ismaelbr87@gmail.com>
+Date:   Sun Jan 27 00:44:45 2019 -0600
+
+    Manejo de Errores con Try Catch
+
+commit f28fbb7164a0ccf6d7f78e0b05be74ed7bed1727
+Merge: 1660341 b230c4b
+Author: IsmaelJdz7 <ismaelbr87@gmail.com>
+Date:   Sat Jan 26 16:49:55 2019 -0600
+
+    Merge remote-tracking branch 'origin/prubaGit' into pruebaGitLocal
+
+commit b230c4bc5f009f69c222e15967b90d111b1aa2fa
+Author: Ismael Barrios R <ismael_br7@hotmail.com>
+Date:   Sat Jan 26 16:42:27 2019 -0600
+
+    creamos un archivo en la rama pruebaGit
+
+commit 166034150710683255893d6b3ff1f99a0602a76d
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Fri Jan 25 18:19:12 2019 -0600
+
+    Encontrando elementos en la lista y agregando el contenido al Modal
+
+commit c648c3299795bf4502eb333d75e4e75b47b06d0d
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Thu Jan 24 17:14:20 2019 -0600
+
+    Uso de dataSET
+
+commit 9ec111ad08e5a33d85ce89713657698d248ce890
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Thu Jan 24 13:45:42 2019 -0600
+
+    Desestruccturacion de objetos
+
+commit 1a0563c58c2338808a49ac425a456b4ba6ad4574
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Thu Jan 24 13:14:52 2019 -0600
+
+    Agregando accion al formulario y el buscador de peliculas
+
+commit c12d9ebf1840847e7b3c7aa6e00c34dbd3e8b26e
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Wed Jan 23 17:12:41 2019 -0600
+
+    Creacion de elementos y asignacion de atributos
+
+commit 4b71478d607395a36156640632379bb42ca14c4e
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Tue Jan 22 17:47:37 2019 -0600
+
+    Manipular clases y css con JS
+
+commit b4961c3c5d203c57506d96ae4e05ef61bfbc3ec4
+Merge: aebbd07 159b0fe
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Tue Jan 22 12:15:23 2019 -0600
+
+    Merge branch 'master' of git/ismaelJdz for devBranch
+
+commit 159b0fe7c4264f00d5f8d4fe08e337ebfe9c32d2
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Tue Jan 22 12:12:47 2019 -0600
+
+    Se descargaron los formatos por genero de la API debido a un error al hacer la request
+
+commit e8b85fd67b3ed312a4e6b2e9127096fb11aef347
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Mon Jan 21 19:54:30 2019 -0600
+
+    Enlazando eventos al DOM
+
+commit aebbd07bad7d1c7d29583287f869ae9a403bf0ab
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Mon Jan 21 19:32:32 2019 -0600
+
+    error en fetch por falla de API
+
+commit 8672d3de0d3290fd0b78afc1d2d5846cdc823fe2
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Mon Jan 21 19:03:25 2019 -0600
+
+    Cambiando los generos de la peliculas
+
+commit eea2795a7c82b50063a98abbbfa4e28656a3cb0a
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Fri Jan 18 10:11:10 2019 -0600
+
+    agregando variable
+
+commit 529092b7a5cbf4e7a5cb947b72517504ca0061ca
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Thu Jan 17 16:49:58 2019 -0600
+
+    Cargando las imagenes de API con VanillaJs
+
+commit 5d67f01949af723c9d0c13a5b812dfd22a0ad48c
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Thu Jan 17 11:58:19 2019 -0600
+
+    Agregando el TemplateJs en VanillaJs
+
+commit 0c3f1337dfaeeaab5a7493f4538a9314696f2e23
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Wed Jan 16 17:40:36 2019 -0600
+
+    Agregando plantilla con VanillaJs
+
+commit ab25d912bfc5fa8edac477d539a3668837e123dc
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Mon Jan 14 17:38:54 2019 -0600
+
+    Selectores en Js
+
+commit 3ea687d842d090ae7070a720d6265886042d67c1
+Author: IsmaelJdz7 <ismaelbr87@gmail.com>
+Date:   Mon Jan 14 00:40:44 2019 -0600
+
+    funciones async
+
+commit c8a2c6f4b43d6969bddd17c4454368acdc643f64
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Mon Jan 7 19:51:52 2019 -0600
+
+    Ajax con jquery y vanillaJs
+
+commit ee183a5e12bc2d68091e0d74194af3455587fdf0
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Mon Jan 7 19:21:40 2019 -0600
+
+    Promise Example
+
+commit 590c3daa4a416a9ca585b450663dd7e114e1f39f
+Author: IsmaelJdz <ismael_br7@hotmail.com>
+Date:   Mon Jan 7 18:16:02 2019 -0600
+
+    Archivos base
